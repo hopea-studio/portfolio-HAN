@@ -7,11 +7,16 @@ import Link from '../components/Link';
 import Copyright from '../components/Copyright';
 import { Grid } from '@material-ui/core';
 import Layout from '../components/Layout';
+import Hero from '../components/Hero';
+import About from '../components/About';
+import Portfolio from '../components/Portfolio';
 
 export default function Index() {
   return (
     <Layout>
-      
+      <Hero />
+      <About />
+      <Portfolio />
     </Layout>
   );
 }

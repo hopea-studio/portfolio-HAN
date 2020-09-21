@@ -10,13 +10,16 @@ const theme = createMuiTheme({
     secondary: {
       main: blueGrey[500],
     },
+    test: {
+      primary: grey[900],
+    },
     error: {
       main: red.A400,
     },
     background: {
-      default: grey[100],
+      default: grey[200],
     },
   },
-});
+})
 
 export default theme;
