@@ -26,7 +26,9 @@ const Portfolio = () => {
         container
         direction="column"
         spacing={2}
-        xs={8}
+              md={8}
+              sm={10}
+              xs={12}
         className={classes.projects}
       >
         <Grid item>

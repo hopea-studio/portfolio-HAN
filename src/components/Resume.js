@@ -22,11 +22,27 @@ const Resume = () => {
         <Typography variant="h4">Resume</Typography>
       </Grid>
 
-      <Grid item container spacing={2} xs={10} className={classes.resume} justify='center'>
-        <Grid item xs={6}>
+      <Grid
+        item
+        container
+        spacing={2}
+        md={8}
+        sm={10}
+        xs={12}
+        className={classes.resume}
+        justify="center"
+      >
+        <Grid item md={6} xs={12}>
           <Paper className={classes.paper}>Working History</Paper>
         </Grid>
-        <Grid item container direction="column" xs={6} spacing={2}>
+        <Grid
+          item
+          container
+          direction="column"
+          md={6}
+          xs={12}
+          spacing={2}
+        >
           <Grid item>
             <Paper className={classes.paper}>Education</Paper>
           </Grid>

@@ -24,22 +24,22 @@ const About = () => {
           <Typography variant="h4">About Me</Typography>
         </Grid>
         <Grid item container spacing={2}>
-          <Grid item xs={3}>
+          <Grid item md={3} sm={6} xs={12}>
             <Paper elevation={1} className={classes.card}>
               Traits
             </Paper>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item md={3} sm={6} xs={12}>
             <Paper elevation={2} className={classes.card}>
               Traits
             </Paper>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item md={3} sm={6} xs={12}>
             <Paper elevation={3} className={classes.card}>
               Traits
             </Paper>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item md={3} sm={6} xs={12}>
             <Paper elevation={0} className={classes.card}>
               Traits
             </Paper>
