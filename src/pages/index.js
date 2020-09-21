@@ -10,6 +10,7 @@ import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Portfolio from '../components/Portfolio';
+import Resume from '../components/Resume';
 
 export default function Index() {
   return (
@@ -17,6 +18,7 @@ export default function Index() {
       <Hero />
       <About />
       <Portfolio />
+      <Resume />
     </Layout>
   );
 }

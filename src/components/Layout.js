@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
             <Typography variant="h2">Tingjun Han</Typography>
           </Grid>
         </Grid>
-        <Grid container direction="column" alignItems='center' spacing={4}>
+        <Grid container direction="column" alignItems='center' spacing={10}>
           {children}
         </Grid>
       </Container>
