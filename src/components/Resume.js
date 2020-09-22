@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 const Resume = () => {
   const classes = useStyles()
   return (
-    <Grid item container direction="column" alignItems="center" spacing={4}>
+    <Grid item container direction="column" alignItems="center" spacing={4} id="resume">
       <Grid item>
         <Typography variant="h4">Resume</Typography>
       </Grid>

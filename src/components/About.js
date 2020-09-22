@@ -23,6 +23,7 @@ const About = (props) => {
       alignItems="center"
       md={10}
       spacing={4}
+      id="about"
     >
       <Grid item>
         <Typography variant="h4">About Me</Typography>

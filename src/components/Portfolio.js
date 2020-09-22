@@ -1,6 +1,7 @@
-import { Box, Card, CardContent, CardMedia, Chip, Grid, Paper, Typography } from "@material-ui/core"
+import { Box, Button, Card, CardContent, CardMedia, Chip, Grid, Paper, Typography } from "@material-ui/core"
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
+import Link from "./Link"
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -28,7 +29,14 @@ const Portfolio = (props) => {
   } = props.data
 
   return (
-    <Grid item container direction="column" alignItems="center" spacing={4}>
+    <Grid
+      item
+      container
+      direction="column"
+      alignItems="center"
+      spacing={4}
+      id="portfolio"
+    >
       <Grid item>
         <Typography variant="h4">Portfolio</Typography>
       </Grid>
@@ -58,8 +66,8 @@ const Portfolio = (props) => {
                     <Box display="flex" flexWrap="wrap" mt={1}>
                       {i.skills.map((i) => {
                         return (
-                            <Chip
-                                key={i}
+                          <Chip
+                            key={i}
                             className={classes.chip}
                             label={i}
                             color="primary"
@@ -75,9 +83,12 @@ const Portfolio = (props) => {
             </Grid>
           )
         })}
-        <Grid item container justify="flex-end">
-          <Grid item>Button 1</Grid>
-          <Grid item>Button 2</Grid>
+        <Grid item container justify="center">
+          <Grid item>
+            <Button variant="outlined">
+              <Link to="/portfolios/"> Get a full list of the portfolio</Link>
+            </Button>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>

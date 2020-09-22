@@ -8,15 +8,15 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     width: theme.spacing(10),
     height: theme.spacing(10),
-    margin:theme.spacing(6)
+    margin: theme.spacing(6),
   },
   title: {
     marginTop: 12,
     marginLeft: 12,
-    },
-    paper: {
-        width: '100%',
-  }
+  },
+  paper: {
+    width: "100%",
+  },
 }))
 
 const Hero = () => {
@@ -24,28 +24,36 @@ const Hero = () => {
 
   return (
     <Grid item container md={8}>
-      <Paper className={classes.paper} elevation={0}>
-        <Grid container direction='column' alignItems="center" spacing={1}>
+      <Paper className={classes.paper} elevation={1}>
+        <Grid container direction="column" alignItems="center" spacing={1}>
           <Grid item>
             <Avatar className={classes.avatar}></Avatar>
           </Grid>
           <Grid item>
             <Breadcrumbs>
-              <Link color="textPrimary">About</Link>
-              <Link color="textPrimary">Portfolio</Link>
-              <Link color="textPrimary">Resume</Link>
-              <Link color="textPrimary">Contact</Link>
+              <Link color="textPrimary" to="#about">
+                About
+              </Link>
+              <Link color="textPrimary" to="#portfolio">
+                Portfolio
+              </Link>
+              <Link color="textPrimary" to="#resume">
+                Resume
+              </Link>
+              <Link color="textPrimary" to="#contact">
+                Contact
+              </Link>
             </Breadcrumbs>
           </Grid>
           <Grid item spacing={2}>
             <IconButton>
-              <LinkedInIcon />
+              <LinkedInIcon color='primary' />
             </IconButton>
             <IconButton>
-              <LinkedInIcon />
+              <LinkedInIcon color='secondary' />
             </IconButton>
             <IconButton>
-              <LinkedInIcon />
+              <LinkedInIcon color='error' />
             </IconButton>
           </Grid>
         </Grid>

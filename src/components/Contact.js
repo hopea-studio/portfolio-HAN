@@ -13,7 +13,14 @@ const Contact = () => {
   const classes = useStyles()
 
   return (
-    <Grid item container direction="column" alignItems="center" spacing={4}>
+    <Grid
+      item
+      container
+      direction="column"
+      alignItems="center"
+      spacing={4}
+      id="contact"
+    >
       <Grid item>
         <Typography variant="h4">Contact</Typography>
       </Grid>

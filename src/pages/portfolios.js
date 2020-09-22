@@ -1,32 +1,69 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Layout from "../components/Layout"
+import { Card, CardMedia, Grid, Paper, Typography } from "@material-ui/core"
+import { makeStyles } from "@material-ui/core/styles"
+import Link from "../components/Link"
 
-const portfolio = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>
+const useStyles = makeStyles((theme) => ({
+  cover: {
+    width: 280,
+    height: 280,
+  },
+}))
+
+const Portfolios = ({ data }) => {
+  const classes = useStyles()
+
+  const {
+    projects: { nodes: projects },
+  } = data
+
+  return (
+    <Layout>
+      <Grid item container direction="column" spacing={2} md={10}>
+        {projects.map((i) => {
+          return (
+            <Grid item key={i.id}>
+              <Paper>
+                <Card>
+                  <Grid container>
+                    <Grid item>
+                      <CardMedia
+                        src={i.cover.fluid.src}
+                        component="img"
+                        className={classes.cover}
+                      />
+                    </Grid>
+                    <Grid item>
+                      <Typography>{i.title}</Typography>
+                      <Link to={`/portfolios/${i.slug}`}>Check the full gallary</Link>
+                    </Grid>
+
+                  </Grid>
+                </Card>
+              </Paper>
+            </Grid>
+          )
+        })}
+      </Grid>
+    </Layout>
+  )
+}
 
 export const query = graphql`
   {
-    allContentfulAboutHan(sort: { fields: contentfulid, order: ASC }) {
-      nodes {
-        contentfulid
-        title
-        icon {
-          fluid {
-            ...GatsbyContentfulFluid
-          }
-        }
-        points
-      }
-    }
-
-    recent: allContentfulDesignProject(
-      limit: 3
-      sort: { order: ASC, fields: id }
+    projects: allContentfulDesignProject(
+      sort: { order: ASC, fields: contentfulid }
     ) {
       nodes {
         id
+        contentfulid
         title
         skills
         link
+        categroy
+        Slug
         intro {
           internal {
             content
@@ -53,4 +90,4 @@ export const query = graphql`
   }
 `
 
-export default portfolio
+export default Portfolios
