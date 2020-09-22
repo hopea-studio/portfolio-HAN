@@ -37,7 +37,7 @@ const Portfolios = ({ data }) => {
                     </Grid>
                     <Grid item>
                       <Typography>{i.title}</Typography>
-                      <Link to={`/portfolios/${i.slug}`}>Check the full gallary</Link>
+                      <Link to={`/portfolios/${i.Slug}`}>Check the full gallary</Link>
                     </Grid>
 
                   </Grid>
