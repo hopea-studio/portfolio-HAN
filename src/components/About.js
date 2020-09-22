@@ -41,6 +41,7 @@ const About = (props) => {
                 {i.points.map((item) => {
                   return (
                     <Chip
+                      key={item}
                       avatar={<Avatar>{item[0]}</Avatar>}
                       label={item}
                       variant="outlined"

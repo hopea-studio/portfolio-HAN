@@ -1,7 +1,5 @@
 import { Box, Card, CardContent, CardMedia, Chip, Grid, Paper, Typography } from "@material-ui/core"
 import React from "react"
-import { graphql } from "gatsby"
-
 import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles((theme) => ({
