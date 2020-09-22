@@ -11,13 +11,13 @@ export const query = graphql`
         title
         icon {
           fluid {
-            sizes
+            ...GatsbyContentfulFluid
           }
         }
         points
       }
     }
-    
+
     recent: allContentfulDesignProject(
       limit: 3
       sort: { order: ASC, fields: id }

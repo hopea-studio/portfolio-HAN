@@ -27,10 +27,11 @@ export const query = graphql`
         title
         icon {
           fluid {
-            sizes
+            ...GatsbyContentfulFluid
           }
         }
         points
+        backgroundColor
       }
     }
     recent: allContentfulDesignProject(
