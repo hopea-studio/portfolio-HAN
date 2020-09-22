@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10px",
   },
   cover: {
-    width: 150,
+      width: 180,
+      height: 180,
   },
   chip: {
     fontSize: "0.75rem",
