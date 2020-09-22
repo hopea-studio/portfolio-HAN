@@ -9,7 +9,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const About = () => {
+
+
+const About = (props) => {
+
+  const {
+    about: { nodes: about },
+  } = props.data
+
     const classes = useStyles()
     return (
       <Grid
@@ -26,7 +33,7 @@ const About = () => {
         <Grid item container spacing={2}>
           <Grid item md={3} sm={6} xs={12}>
             <Paper elevation={1} className={classes.card}>
-              Traits
+              {about[0].title}
             </Paper>
           </Grid>
           <Grid item md={3} sm={6} xs={12}>

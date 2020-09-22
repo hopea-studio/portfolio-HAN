@@ -11,7 +11,7 @@ export default function Index({data}) {
   return (
     <Layout>
       <Hero />
-      <About />
+      <About data={data}/>
       <Portfolio data={data} />
       <Resume />
       <Contact />
@@ -21,6 +21,18 @@ export default function Index({data}) {
 
 export const query = graphql`
   {
+    about: allContentfulAboutHan(sort: { fields: contentfulid, order: ASC }) {
+      nodes {
+        contentfulid
+        title
+        icon {
+          fluid {
+            sizes
+          }
+        }
+        points
+      }
+    }
     recent: allContentfulDesignProject(
       limit: 3
       sort: { order: ASC, fields: contentfulid }

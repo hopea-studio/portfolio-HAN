@@ -5,6 +5,19 @@ const portfolio = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>
 
 export const query = graphql`
   {
+    allContentfulAboutHan(sort: { fields: contentfulid, order: ASC }) {
+      nodes {
+        contentfulid
+        title
+        icon {
+          fluid {
+            sizes
+          }
+        }
+        points
+      }
+    }
+    
     recent: allContentfulDesignProject(
       limit: 3
       sort: { order: ASC, fields: id }
