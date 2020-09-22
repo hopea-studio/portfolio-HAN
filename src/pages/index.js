@@ -5,15 +5,42 @@ import About from '../components/About';
 import Portfolio from '../components/Portfolio';
 import Resume from '../components/Resume';
 import Contact from '../components/Contact';
+import { graphql } from "gatsby"
 
-export default function Index() {
+export default function Index({data}) {
   return (
     <Layout>
       <Hero />
       <About />
-      <Portfolio />
+      <Portfolio data={data} />
       <Resume />
       <Contact />
     </Layout>
-  );
+  )
 }
+
+export const query = graphql`
+  {
+    recent: allContentfulDesignProject(
+      limit: 3
+      sort: { order: ASC, fields: contentfulid }
+    ) {
+      nodes {
+        id
+        contentfulid
+        title
+        skills
+        intro {
+          internal {
+            content
+          }
+        }
+        cover {
+          fluid {
+            ...GatsbyContentfulFluid
+          }
+        }
+      }
+    }
+  }
+`
