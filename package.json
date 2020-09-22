@@ -16,7 +16,9 @@
     "gatsby-transformer-sharp": "^2.5.13",
     "react": "latest",
     "react-dom": "latest",
-    "react-helmet": "latest"
+    "react-helmet": "latest",
+    "react-particles-js": "^3.3.0",
+    "react-tsparticles": "^1.17.12"
   },
   "scripts": {
     "develop": "gatsby develop",

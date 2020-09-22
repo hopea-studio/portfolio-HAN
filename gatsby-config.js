@@ -10,8 +10,6 @@ module.exports = {
         // },
       },
     },
-    // If you want to use styled components you should add the plugin here.
-    // 'gatsby-plugin-styled-components',
     "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-source-filesystem`,
