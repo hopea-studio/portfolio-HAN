@@ -43,6 +43,7 @@ export const query = graphql`
         contentfulid
         title
         skills
+        Slug
         intro {
           internal {
             content

@@ -77,6 +77,9 @@ const Portfolio = (props) => {
                         )
                       })}
                     </Box>
+                    <Button variant="contained">
+                      <Link to={`/portfolios/${i.Slug}`}>Gallary</Link>
+                    </Button>
                   </CardContent>
                 </Card>
               </Paper>
