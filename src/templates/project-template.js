@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles((theme) => ({
   cover: {
-    width: 280,
+    width: "100%",
   },
 }))
 
@@ -16,7 +16,7 @@ const ProjectTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <Grid item container spacing={2}>
+      <Grid item container spacing={2} md={6} sm={8} xs={12}>
         {project.images.map((i) => {
           return (
             <Grid item key={i.fluid.base64}>
@@ -49,6 +49,7 @@ export const query = graphql`
       }
       images {
         fluid {
+          aspectRatio
           ...GatsbyContentfulFluid
         }
       }
