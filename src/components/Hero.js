@@ -38,7 +38,7 @@ const Hero = () => {
                 Portfolio
               </Link>
               <Link color="textPrimary" to="#resume">
-                Resume
+                Timeline
               </Link>
               <Link color="textPrimary" to="#contact">
                 Contact

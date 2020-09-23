@@ -19,7 +19,7 @@ const Resume = () => {
   return (
     <Grid item container direction="column" alignItems="center" spacing={4} id="resume">
       <Grid item>
-        <Typography variant="h4">Resume</Typography>
+        <Typography variant="h4">Timeline</Typography>
       </Grid>
 
       <Grid
@@ -35,20 +35,8 @@ const Resume = () => {
         <Grid item md={6} xs={12}>
           <Paper className={classes.paper}>Working History</Paper>
         </Grid>
-        <Grid
-          item
-          container
-          direction="column"
-          md={6}
-          xs={12}
-          spacing={2}
-        >
-          <Grid item>
-            <Paper className={classes.paper}>Education</Paper>
-          </Grid>
-          <Grid item>
-            <Paper className={classes.paper}>Hobby</Paper>
-          </Grid>
+        <Grid item md={6} xs={12}>
+          <Paper className={classes.paper}>Education</Paper>
         </Grid>
         <Grid item container justify="flex-end">
           <Grid item>Button 1</Grid>
