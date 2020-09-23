@@ -4,6 +4,7 @@ import Layout from "../components/Layout"
 import { Card, CardMedia, Grid, Paper, Typography } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import Link from "../components/Link"
+import Image from "gatsby-image"
 
 const useStyles = makeStyles((theme) => ({
   cover: {
@@ -29,17 +30,14 @@ const Portfolios = ({ data }) => {
                 <Card>
                   <Grid container>
                     <Grid item>
-                      <CardMedia
-                        src={i.cover.fluid.src}
-                        component="img"
-                        className={classes.cover}
-                      />
+                      <Image fluid={i.cover.fluid} width="100%" />
                     </Grid>
                     <Grid item>
                       <Typography>{i.title}</Typography>
-                      <Link to={`/portfolios/${i.Slug}`}>Check the full gallary</Link>
+                      <Link to={`/portfolios/${i.Slug}`}>
+                        Check the full gallary
+                      </Link>
                     </Grid>
-
                   </Grid>
                 </Card>
               </Paper>

@@ -2,6 +2,7 @@ import { Box, Button, Card, CardContent, CardMedia, Chip, Grid, Paper, Typograph
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Link from "./Link"
+import Image from "gatsby-image"
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -55,9 +56,8 @@ const Portfolio = (props) => {
             <Grid item key={i.id}>
               <Paper>
                 <Card className={classes.card}>
-                  <CardMedia
-                    src={i.cover.fluid.src}
-                    component="img"
+                  <Image
+                    fluid={i.cover.fluid}
                     className={classes.cover}
                   />
                   <CardContent>
