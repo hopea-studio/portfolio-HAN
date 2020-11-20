@@ -1,6 +1,7 @@
 import React from "react"
 import ParticlesJS from "react-tsparticles"
 import { makeStyles } from "@material-ui/core/styles"
+import { grey } from "@material-ui/core/colors"
 
 const useStyles = makeStyles((theme) => ({
   particles: {
@@ -22,13 +23,13 @@ const Particles = () => {
       options={{
         background: {
           color: {
-            value: "#f5f5f5",
+            value: grey[50],
           },
         },
         fpsLimit: 60,
         particles: {
           color: {
-            value: "#311b92",
+            value: grey[700],
           },
           collisions: {
             enable: true,
@@ -56,7 +57,7 @@ const Particles = () => {
           },
           size: {
             random: true,
-            value: 4,
+            value: 2,
           },
         },
         detectRetina: true,

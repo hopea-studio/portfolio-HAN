@@ -1,18 +1,19 @@
-import { Container, Grid, Typography } from "@material-ui/core"
+import { Box, Hidden } from "@material-ui/core"
 import React from "react"
-
 import { makeStyles } from "@material-ui/core/styles"
 import Particles from "./Particles"
+import Nav from "./Nav"
+import Header from "./Header"
+import Footer from "./Footer"
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    position: "absolute",
+  nav: {
+    width: "4vw",
+    border: "1px solid black",
+    position: "relative",
   },
-  header: {
-    padding: theme.spacing(2),
-  },
-  footer: {
-    padding: theme.spacing(2),
+  main: {
+    flexGrow: "1",
   },
 }))
 
@@ -20,22 +21,19 @@ const Layout = ({ children }) => {
   const classes = useStyles()
 
   return (
-    <Container maxWidth="xl" className={classes.container}>
-      <Particles />
-      <Grid container justify="center">
-        <Grid item className={classes.header}>
-          <Typography variant="h2">Tingjun Han</Typography>
-        </Grid>
-      </Grid>
-      <Grid container direction="column" alignItems="center" spacing={10}>
+    <Box display="flex">
+      <Hidden mdDown>
+        <Box className={classes.nav}>
+          <Particles />
+          <Nav />
+        </Box>
+      </Hidden>
+      <Box className={classes.main}>
+        <Header />
         {children}
-      </Grid>
-      <Grid container justify="center">
-        <Grid item className={classes.footer}>
-          <Typography variant="h6">Footer</Typography>
-        </Grid>
-      </Grid>
-    </Container>
+        <Footer />
+      </Box>
+    </Box>
   )
 }
 
