@@ -7,9 +7,6 @@ const useStyles = makeStyles((theme) => ({
   header: {
     borderBottom: "1px solid black",
   },
-  logo: {
-    width: "18rem",
-  },
 }))
 
 const Header = () => {
@@ -21,7 +18,12 @@ const Header = () => {
   const classes = useStyles()
 
   return (
-    <Box className={classes.header} display="flex" justifyContent="center">
+    <Box
+      py={2}
+      className={classes.header}
+      display="flex"
+      justifyContent="center"
+    >
       <a.div style={fade}>
         <Typography variant="h1">Tingjun Han</Typography>
       </a.div>
