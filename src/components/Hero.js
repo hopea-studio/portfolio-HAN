@@ -14,7 +14,6 @@ import { makeStyles } from "@material-ui/core/styles"
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined"
 import MailOutlineOutlinedIcon from "@material-ui/icons/MailOutlineOutlined"
 import PermIdentityIcon from "@material-ui/icons/PermIdentity"
-import RemoveRoundedIcon from "@material-ui/icons/RemoveRounded"
 //import Image from "gatsby-image"
 
 function ListItemLink(props) {
@@ -78,11 +77,17 @@ const Hero = (props) => {
           <Grid item>
             <List dense>
               <ListItem>
+                <ListItemIcon></ListItemIcon>
+                <ListItemText>
+                  <Typography variant="h5">Tingjun Han</Typography>
+                </ListItemText>
+              </ListItem>
+              <ListItem>
                 <ListItemIcon>
                   <PermIdentityIcon />
                 </ListItemIcon>
                 <ListItemText>
-                  <Typography variant="h5">Web Developer</Typography>
+                  <Typography>UI / UX Designer</Typography>
                 </ListItemText>
               </ListItem>
               <ListItem>
@@ -98,7 +103,7 @@ const Hero = (props) => {
                   <MailOutlineOutlinedIcon />
                 </ListItemIcon>
                 <ListItemText>
-                  <Typography>su2047@gmail.com</Typography>
+                  <Typography>lamorthan@gmail.com</Typography>
                 </ListItemText>
               </ListItemLink>
             </List>
