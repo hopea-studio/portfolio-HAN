@@ -18,7 +18,7 @@ import specialities from "../images/specialities.svg"
 import knowledge from "../images/knowledge.svg"
 import software from "../images/software.svg"
 import { grey } from "@material-ui/core/colors"
-import AvatarImg from "../images/avatar.JPG"
+import AvatarImg from "../images/avatar.jpg"
 
 function ListItemLink(props) {
   return <ListItem button component="a" {...props} />
