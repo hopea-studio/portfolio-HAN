@@ -28,18 +28,26 @@ const Portfolio = (props) => {
 
   return (
     <Box id="portfolio" py={12} display="flex" justifyContent="center">
-      <Grid container direction="column" xs={11} md={10} lg={12} spacing={10}>
+      <Grid
+        container
+        direction="column"
+        xs={11}
+        md={10}
+        lg={8}
+        xl={7}
+        spacing={10}
+      >
         {recent.map((i) => {
           return (
-            <Grid item container key={i.id} spacing={2}>
-              <Grid item xl={6} lg={8} xs={12} container justify="center">
+            <Grid item container key={i.id} spacing={6}>
+              <Grid item lg={4} md={6} xs={12} container justify="center">
                 <video autoPlay loop muted playsInline>
                   <source src={i.cover.file.url} type="video/mp4" />
                 </video>
                 {/* <Image fluid={i.cover.fluid} className={classes.cover} /> */}
               </Grid>
-              <Grid item container xl={6} lg={4} xs={12} direction="column">
-                <Box pt={2} pr={4}>
+              <Grid item container lg={8} md={6} xs={12} direction="column">
+                <Box>
                   <Grid container direction="column" spacing={2}>
                     <Typography gutterBottom variant="subtitle1">
                       2020
