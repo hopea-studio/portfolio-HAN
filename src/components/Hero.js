@@ -18,7 +18,7 @@ import specialities from "../images/specialities.svg"
 import knowledge from "../images/knowledge.svg"
 import software from "../images/software.svg"
 import { grey } from "@material-ui/core/colors"
-import AvatarImg from "../images/Avatar.jpg"
+import AvatarImg from "../images/avatar.jpg"
 import Image from "gatsby-image"
 
 function ListItemLink(props) {
