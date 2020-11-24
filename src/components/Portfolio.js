@@ -1,27 +1,9 @@
 import { Box, Button, Chip, Grid, Typography } from "@material-ui/core"
 import React from "react"
-import { makeStyles } from "@material-ui/core/styles"
 import Link from "./Link"
 //import Image from "gatsby-image"
 
-const useStyles = makeStyles((theme) => ({
-  cover: {
-    width: 300,
-    height: 300,
-  },
-  chip: {
-    fontSize: "0.75rem",
-    marginRight: "2px",
-  },
-  right: {
-    padding: theme.spacing(1),
-    border: "1px solid red",
-  },
-}))
-
 const Portfolio = (props) => {
-  const classes = useStyles()
-
   const {
     recent: { nodes: recent },
   } = props.data
@@ -47,53 +29,51 @@ const Portfolio = (props) => {
                 {/* <Image fluid={i.cover.fluid} className={classes.cover} /> */}
               </Grid>
               <Grid item container lg={8} md={6} xs={12} direction="column">
-                <Box>
-                  <Grid container direction="column" spacing={2}>
+                <Grid container direction="column" spacing={2}>
+                  <Grid item>
                     <Typography gutterBottom variant="subtitle1">
                       2020
                     </Typography>
-                    <Grid item>
-                      <Typography>{i.title}</Typography>
-                    </Grid>
-                    <Grid item>
-                      <Typography variant="h6">
-                        {i.intro.internal.content}
-                      </Typography>
-                    </Grid>
-                    <Grid item>
-                      <Typography>{i.detail.internal.content}</Typography>
-                    </Grid>
-                    <Grid item>
-                      {i.skills.map((i) => {
-                        return (
+                  </Grid>
+                  <Grid item>
+                    <Typography variant="h5">{i.title}</Typography>
+                  </Grid>
+                  <Grid item>
+                    <Typography variant="h6">
+                      {i.intro.internal.content}
+                    </Typography>
+                  </Grid>
+                  <Grid item>
+                    <Typography>{i.detail.internal.content}</Typography>
+                  </Grid>
+                  <Grid item container spacing={1}>
+                    {i.skills.map((i) => {
+                      return (
+                        <Grid item key={i}>
                           <Chip
-                            key={i}
-                            className={classes.chip}
                             label={i}
                             color="primary"
                             size="small"
                             variant="outlined"
                           ></Chip>
-                        )
-                      })}
-                    </Grid>
-                    <Grid item>
-                      <Button variant="outlined">
-                        <Link to={`/portfolios/${i.Slug}`}>Gallary</Link>
-                      </Button>
-                    </Grid>
+                        </Grid>
+                      )
+                    })}
                   </Grid>
-                </Box>
+                  <Grid item container justify="flex-end">
+                    <Button>
+                      <Link to={`/portfolios/${i.Slug}`}>Gallary</Link>
+                    </Button>
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
           )
         })}
         <Grid item container justify="center">
-          <Grid item>
-            <Button variant="outlined">
-              <Link to="/portfolios/"> Get a full list of the portfolio</Link>
-            </Button>
-          </Grid>
+          <Button>
+            <Link to="/portfolios/"> See the full list of Projects</Link>
+          </Button>
         </Grid>
       </Grid>
     </Box>

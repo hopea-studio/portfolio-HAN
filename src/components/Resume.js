@@ -1,49 +1,94 @@
-import { Grid, Paper, Typography } from "@material-ui/core"
+import { Box, Grid, Typography } from "@material-ui/core"
 import React from "react"
 
 import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles((theme) => ({
-  paper: {
-        height: "100%",
-      minHeight:100,
-  },
   resume: {
-    border: "2px solid grey",
-    borderRadius: "10px",
+    borderTop: "1px solid black",
   },
 }))
 
-const Resume = () => {
-  const classes = useStyles()
-  return (
-    <Grid item container direction="column" alignItems="center" spacing={4} id="resume">
-      <Grid item>
-        <Typography variant="h4">Timeline</Typography>
-      </Grid>
+const Resume = ({ data }) => {
+  const {
+    education: { nodes: edu },
+    work: { nodes: work },
+  } = data
 
-      <Grid
-        item
-        container
-        spacing={2}
-        md={8}
-        sm={10}
-        xs={12}
-        className={classes.resume}
-        justify="center"
-      >
-        <Grid item md={6} xs={12}>
-          <Paper className={classes.paper}>Working History</Paper>
+  const classes = useStyles()
+
+  return (
+    <Box
+      py={15}
+      id="resume"
+      display="flex"
+      justifyContent="center"
+      className={classes.resume}
+    >
+      <Grid container xs={11} md={10} spacing={2}>
+        <Grid item container lg={6} spacing={3}>
+          <Grid item lg={4}>
+            <Typography variant="h5">Work Experience</Typography>
+          </Grid>
+          <Grid item container lg={8} direction="column" spacing={5}>
+            {work.map((item, index) => {
+              return (
+                <Grid item key={index}>
+                  <Typography gutterBottom>
+                    {item.date} / {item.location}
+                    <span role="img" aria-label="emoji">
+                      {"  "}
+                      💻
+                    </span>
+                  </Typography>
+                  <Typography variant="h6" gutterBottom>
+                    {item.position} / {item.company}
+                  </Typography>
+                  {item.info.map((item, index) => (
+                    <Typography key={index}>
+                      <Typography display="inline" variant="h6">
+                        •
+                      </Typography>{" "}
+                      {item}
+                    </Typography>
+                  ))}
+                </Grid>
+              )
+            })}
+          </Grid>
         </Grid>
-        <Grid item md={6} xs={12}>
-          <Paper className={classes.paper}>Education</Paper>
-        </Grid>
-        <Grid item container justify="flex-end">
-          <Grid item>Button 1</Grid>
-          <Grid item>Button 2</Grid>
+        <Grid item container lg={6} spacing={3}>
+          <Grid
+            item
+            container
+            lg={8}
+            direction="column"
+            spacing={5}
+            alignItems="flex-end"
+          >
+            {edu.map((item, index) => {
+              return (
+                <Grid item key={index}>
+                  <Typography gutterBottom align="right">
+                    <span role="img" aria-label="emoji">
+                      📓{" "}
+                    </span>
+                    {item.date} / {item.location}
+                  </Typography>
+                  <Typography gutterBottom align="right" variant="h6">
+                    {item.degree}
+                  </Typography>
+                  <Typography align="right">{item.school}</Typography>
+                </Grid>
+              )
+            })}
+          </Grid>
+          <Grid item lg={4}>
+            <Typography variant="h5">Education</Typography>
+          </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </Box>
   )
 }
 

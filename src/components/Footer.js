@@ -29,8 +29,8 @@ const Footer = () => {
             <Grid item>
               <Typography gutterBottom>Email</Typography>
               <Typography variant="h6">
-                <Link href="mailto:su2047@gmail.com" target="_blank">
-                  su2047@gmail.com
+                <Link href="mailto:lamorthan@gmail.com" target="_blank">
+                  lamorthan@gmail.com
                 </Link>
               </Typography>
             </Grid>

@@ -3,7 +3,6 @@ import Layout from "../components/Layout"
 import Hero from "../components/Hero"
 import Portfolio from "../components/Portfolio"
 import Resume from "../components/Resume"
-import Contact from "../components/Contact"
 
 import "./index.css"
 
@@ -12,8 +11,7 @@ export default function Index({ data }) {
     <Layout>
       <Hero />
       <Portfolio data={data} />
-      <Resume />
-      <Contact />
+      <Resume data={data} />
     </Layout>
   )
 }
@@ -49,6 +47,26 @@ export const query = graphql`
             ...GatsbyContentfulFluid
           }
         }
+      }
+    }
+
+    education: allContentfulEduHan(sort: { fields: contentfulid, order: ASC }) {
+      nodes {
+        contentfulid
+        date
+        school
+        location
+        degree
+      }
+    }
+    work: allContentfulWorkHan(sort: { order: ASC, fields: contentfulid }) {
+      nodes {
+        contentfulid
+        date
+        location
+        company
+        position
+        info
       }
     }
   }
