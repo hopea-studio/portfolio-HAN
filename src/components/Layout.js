@@ -8,9 +8,8 @@ import Footer from "./Footer"
 
 const useStyles = makeStyles((theme) => ({
   nav: {
-    width: "4vw",
+    width: "6vw",
     border: "1px solid black",
-    position: "relative",
   },
   main: {
     flexGrow: "1",

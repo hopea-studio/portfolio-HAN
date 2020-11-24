@@ -1,15 +1,8 @@
-import {
-  Box,
-  Button,
-  Chip,
-  Grid,
-  Typography,
-  Link as MuiLink,
-} from "@material-ui/core"
+import { Box, Button, Chip, Grid, Typography } from "@material-ui/core"
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Link from "./Link"
-import Image from "gatsby-image"
+//import Image from "gatsby-image"
 
 const useStyles = makeStyles((theme) => ({
   cover: {
@@ -40,7 +33,10 @@ const Portfolio = (props) => {
           return (
             <Grid item container key={i.id} spacing={2}>
               <Grid item xl={6} lg={8} xs={12} container justify="center">
-                <Image fluid={i.cover.fluid} className={classes.cover} />
+                <video autoPlay loop muted playsInline>
+                  <source src={i.cover.file.url} type="video/mp4" />
+                </video>
+                {/* <Image fluid={i.cover.fluid} className={classes.cover} /> */}
               </Grid>
               <Grid item container xl={6} lg={4} xs={12} direction="column">
                 <Box pt={2} pr={4}>
@@ -55,6 +51,9 @@ const Portfolio = (props) => {
                       <Typography variant="h6">
                         {i.intro.internal.content}
                       </Typography>
+                    </Grid>
+                    <Grid item>
+                      <Typography>{i.detail.internal.content}</Typography>
                     </Grid>
                     <Grid item>
                       {i.skills.map((i) => {

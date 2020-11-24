@@ -10,7 +10,7 @@ import "./index.css"
 export default function Index({ data }) {
   return (
     <Layout>
-      <Hero data={data} />
+      <Hero />
       <Portfolio data={data} />
       <Resume />
       <Contact />
@@ -20,21 +20,8 @@ export default function Index({ data }) {
 
 export const query = graphql`
   {
-    about: allContentfulAboutHan(sort: { fields: contentfulid, order: ASC }) {
-      nodes {
-        contentfulid
-        title
-        icon {
-          fluid {
-            ...GatsbyContentfulFluid
-          }
-        }
-        points
-        backgroundColor
-      }
-    }
     recent: allContentfulDesignProject(
-      limit: 3
+      limit: 4
       sort: { order: ASC, fields: contentfulid }
     ) {
       nodes {
@@ -48,7 +35,16 @@ export const query = graphql`
             content
           }
         }
+        detail {
+          internal {
+            content
+          }
+        }
         cover {
+          file {
+            url
+            contentType
+          }
           fluid {
             ...GatsbyContentfulFluid
           }

@@ -11,19 +11,18 @@ const useStyles = makeStyles((theme) => ({
     position: "fixed",
     width: "3vw",
   },
-
   nav: {
     writingMode: "vertical-rl",
     textOrientation: "mixed",
     paddingTop: "40px",
-    paddingRight: "5px",
+    paddingRight: "15px",
     textTransform: "uppercase",
   },
   icon: {
     writingMode: "vertical-rl",
     textOrientation: "mixed",
     paddingBottom: "20px",
-    paddingRight: "5px",
+    paddingRight: "15px",
   },
 }))
 
