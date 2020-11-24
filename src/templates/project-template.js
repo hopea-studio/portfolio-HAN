@@ -1,7 +1,6 @@
 import React from "react"
-import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import { Card, CardMedia, Grid } from "@material-ui/core"
+import { Card, Grid } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import Image from "gatsby-image"
 
@@ -22,7 +21,7 @@ const ProjectTemplate = ({ data }) => {
           return (
             <Grid item key={i.fluid.base64} xs={12}>
               <Card>
-                <Image fluid={i.fluid} className={classes.cover} />
+                <Image className={classes.cover} fluid={i.fluid} />
               </Card>
             </Grid>
           )

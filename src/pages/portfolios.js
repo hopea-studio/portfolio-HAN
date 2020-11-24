@@ -1,16 +1,12 @@
 import React from "react"
-import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import { Card, CardMedia, Grid, Paper, Typography } from "@material-ui/core"
+import { Card, Grid, Paper, Typography } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import Link from "../components/Link"
 import Image from "gatsby-image"
 
 const useStyles = makeStyles((theme) => ({
-  cover: {
-    width: 280,
-    height: 280,
-  },
+  cover: {},
 }))
 
 const Portfolios = ({ data }) => {
@@ -30,7 +26,11 @@ const Portfolios = ({ data }) => {
                 <Card>
                   <Grid container>
                     <Grid item>
-                      <Image fluid={i.cover.fluid} width="100%" />
+                      <Image
+                        className={classes.cover}
+                        fluid={i.cover.fluid}
+                        width="100%"
+                      />
                     </Grid>
                     <Grid item>
                       <Typography>{i.title}</Typography>
