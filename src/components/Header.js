@@ -2,6 +2,7 @@ import React from "react"
 import { Box, Typography } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import { useSpring, a } from "react-spring"
+import Link from "./Link"
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -25,7 +26,9 @@ const Header = () => {
       justifyContent="center"
     >
       <a.div style={fade}>
-        <Typography variant="h1">Tingjun Han</Typography>
+        <Typography variant="h1" component={Link} to={"/"}>
+          Tingjun Han
+        </Typography>
       </a.div>
     </Box>
   )

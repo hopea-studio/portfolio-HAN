@@ -46,15 +46,10 @@ const Footer = () => {
               <Typography gutterBottom>Social Channels</Typography>
               <Typography variant="h6">
                 <Link
-                  href="https://www.linkedin.com/in/suxyue/"
+                  href="https://www.linkedin.com/in/tingjun-han/"
                   target="_blank"
                 >
                   LinkedIn
-                </Link>
-              </Typography>
-              <Typography variant="h6">
-                <Link href="https://github.com/yue-su/" target="_blank">
-                  GitHub
                 </Link>
               </Typography>
             </Grid>

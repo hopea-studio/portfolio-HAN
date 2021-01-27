@@ -87,7 +87,7 @@ const Hero = () => {
                   <Typography>NS, CANADA</Typography>
                 </ListItemText>
               </ListItem>
-              <ListItemLink href="mailto:su2047@gmail.com" target="_blank">
+              <ListItemLink href="lamorthan@gmail.com" target="_blank">
                 <ListItemIcon>
                   <MailOutlineOutlinedIcon />
                 </ListItemIcon>

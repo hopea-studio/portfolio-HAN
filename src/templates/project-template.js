@@ -16,10 +16,10 @@ const ProjectTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <Grid item container spacing={2} md={6} sm={8} xs={12}>
+      <Grid item container spacing={2} justify="center">
         {project.images.map((i) => {
           return (
-            <Grid item key={i.fluid.base64} xs={12}>
+            <Grid item key={i.fluid.base64} xs={12} md={10}>
               <Card>
                 <Image className={classes.cover} fluid={i.fluid} />
               </Card>

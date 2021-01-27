@@ -72,7 +72,7 @@ const Portfolio = (props) => {
         })}
         <Grid item container justify="center">
           <Button>
-            <Link to="/portfolios/"> See the full list of Projects</Link>
+            <Link to="/portfolios"> See the full list of Projects</Link>
           </Button>
         </Grid>
       </Grid>
